@@ -49,6 +49,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddonInvokeEvent.cs" />
     <Compile Include="AutoClose.cs" />
     <Compile Include="Buzzer.cs" />
     <Compile Include="DoorStateChangeEvent.cs" />

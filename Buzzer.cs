@@ -9,14 +9,14 @@ namespace DoorModelEventAggregatorPattern
 {
     public class Buzzer 
     {
-        public Action<TimerElapsedEvent> HandleTimerElapsedEvent { get; set; }
+        public Action<AddonInvokeEvent> HandleTimerElapsedEvent { get; set; }
         public Buzzer()
         {
             HandleTimerElapsedEvent = (e) =>
             {
                 Console.Beep();
             };
-            DoorEventAggregator.Instance.Subscribe<TimerElapsedEvent>(HandleTimerElapsedEvent);
+            DoorEventAggregator.Instance.Subscribe<AddonInvokeEvent>(HandleTimerElapsedEvent);
         }
     }
 }

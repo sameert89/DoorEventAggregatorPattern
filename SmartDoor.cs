@@ -10,6 +10,7 @@ namespace DoorModelEventAggregatorPattern
     {
         private Timer timerObj;
         private Action<DoorStateChangeEvent> HandleDoorStateChangeEvent;
+        private Action<TimerElapsedEvent> HandleTimerElapsedEvent;
         public SmartDoor(int t = 10)
         {
             timerObj = new Timer(t);
@@ -17,7 +18,12 @@ namespace DoorModelEventAggregatorPattern
             {
                 Close();
             };
+            HandleTimerElapsedEvent = (e) =>
+            {
+                DoorEventAggregator.Instance.Publish(new AddonInvokeEvent());
+            };
             DoorEventAggregator.Instance.Subscribe(HandleDoorStateChangeEvent);
+            DoorEventAggregator.Instance.Subscribe(HandleTimerElapsedEvent);
         }
         public override bool Open()
         {

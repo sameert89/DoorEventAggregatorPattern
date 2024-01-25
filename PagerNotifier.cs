@@ -9,14 +9,14 @@ namespace DoorModelEventAggregatorPattern
 {
     public class PagerNotifier 
     {
-        public Action<TimerElapsedEvent> HandleTimerElapsedEvent { get; set; }
+        public Action<AddonInvokeEvent> HandleTimerElapsedEvent { get; set; }
         public PagerNotifier()
         {
             HandleTimerElapsedEvent = (e) =>
             {
                 // Pager Logic
             };
-            DoorEventAggregator.Instance.Subscribe<TimerElapsedEvent>(HandleTimerElapsedEvent);
+            DoorEventAggregator.Instance.Subscribe<AddonInvokeEvent>(HandleTimerElapsedEvent);
         }
     }
 }

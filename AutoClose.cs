@@ -9,14 +9,14 @@ namespace DoorModelEventAggregatorPattern
 {
     public class AutoClose 
     {
-        public Action<TimerElapsedEvent> HandleTimerElapsedEvent { get; set; }
+        public Action<AddonInvokeEvent> HandleTimerElapsedEvent { get; set; }
         public AutoClose()
         {
             HandleTimerElapsedEvent = (e) =>
             {
                 DoorEventAggregator.Instance.Publish(new DoorStateChangeEvent(Constants.DoorStates.CLOSED));
             };
-            DoorEventAggregator.Instance.Subscribe(HandleTimerElapsedEvent);
+            DoorEventAggregator.Instance.Subscribe(AddonInvokeEvent);
         }
     }
 }
