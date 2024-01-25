@@ -1,6 +1,6 @@
 ﻿namespace DoorModelEventAggregatorPattern
 {
-    internal class AddonInvokeEvent
+    public class AddonInvokeEvent
     {
         public AddonInvokeEvent()
         {

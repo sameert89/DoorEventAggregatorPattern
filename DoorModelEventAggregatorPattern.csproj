@@ -53,6 +53,7 @@
     <Compile Include="AutoClose.cs" />
     <Compile Include="Buzzer.cs" />
     <Compile Include="DoorStateChangeEvent.cs" />
+    <Compile Include="IEventAggregator.cs" />
     <Compile Include="PagerNotifier.cs" />
     <Compile Include="DoorEventAggregator.cs" />
     <Compile Include="Constants.cs" />

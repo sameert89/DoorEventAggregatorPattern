@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DoorModelEventAggregatorPattern
 {
-    public sealed class DoorEventAggregator
+    public sealed class DoorEventAggregator : IEventAggregator
     {
         private static readonly DoorEventAggregator instance = new DoorEventAggregator();
         private readonly Dictionary<Type, List<Action<object>>> subscribers =
